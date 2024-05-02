@@ -25,7 +25,7 @@ const LeftSide = ({ isMedium, isSmall, item }: any) => {
 					{isSmall || isMedium ? <h4>{item.name}</h4> : <h3>{item.name}</h3>}
 					<p style={{ ...style.shortDP, fontSize: isSmall || isMedium ? '15px' : 'inherit' }}>{item.shortDescription}</p>
 					<p style={{ ...style.categoryP, fontSize: isSmall || isMedium ? '15px' : 'inherit' }}>category: {item.category}</p>
-					<Rating size={isMedium || isSmall ? 'small' : 'medium'} name='read-only' value={4.5} precision={0.5} readOnly sx={{ marginTop: '10px' }} />
+					<Rating size={isMedium || isSmall ? 'small' : 'medium'} name='read-only' value={4.5} precision={0.5} readOnly sx={{ marginTop: '10px', zIndex:1 }} />
 				</Box>
 
          <Box>

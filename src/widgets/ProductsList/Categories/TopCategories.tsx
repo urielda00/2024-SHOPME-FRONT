@@ -34,7 +34,7 @@ const TopCategories = () => {
 
 			{/* Small screen: */}
 			<Mui.Box sx={{ ...style.baseContainer, ...style.containerSStyle }}>
-				<Mui.Accordion sx={{ position: 'absolute', top: '108px' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+				<Mui.Accordion sx={{ position: 'absolute', zIndex: '10', top: '108px' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 					<Mui.AccordionSummary expandIcon={<ExpandMoreIcon />}>
 						<h4>
 							Categories:
