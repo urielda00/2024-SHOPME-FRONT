@@ -37,7 +37,7 @@ const GenerateBtn: FC<Props> = ({ isInfo, item }) => {
 	return (
 		<Button onClick={handleButtonClick} variant='contained' size={isXs || isSm ? 'small' : 'medium'} sx={getStyle}>
 			{!isXs && (isInfo ? 'More Info' : 'Add To Cart')}
-			{isInfo ? <AddShoppingCartIcon sx={{ marginLeft: !isXs ? '10px' : '' }} /> : <InfoIcon sx={{ marginLeft: !isXs ? '10px' : '' }} />}
+			{isInfo ? <InfoIcon sx={{ marginLeft: !isXs ? '10px' : '' }} /> : <AddShoppingCartIcon sx={{ marginLeft: !isXs ? '10px' : '' }} />}
 		</Button>
 	);
 };
