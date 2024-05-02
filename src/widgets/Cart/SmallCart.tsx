@@ -43,7 +43,7 @@ const SmallCart: React.FC = () => {
 						<GenerateLinks marginBottom='-155px' marginTop='100px' icon={true} button={false} />
 					</Mui.Box>
 				) : (
-					<GenerateLinks marginBottom='-155px' marginTop='15px' icon={true} button={false} />
+					<GenerateLinks marginBottom='-155px' marginTop='15px' icon={false} button={false} />
 				)}
 
 				<ul style={style.ul}>

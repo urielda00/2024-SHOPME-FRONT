@@ -50,7 +50,7 @@ const MediumScreen = ({ totalQuantity }: MediumScreenProps) => {
 						<span
 							style={{
 								...style.baseMedSpan,
-								right: '110px',
+								right: '123px',
 							}}
 						>
 							{totalQuantity}

@@ -9,7 +9,7 @@ React.js, ReactQuery, Redux ToolKit ,MUI, TypeScript
 
 ## Access to website
 
-[SHOPME-site-link](https://celadon-cat-38fbfa.netlify.app/)
+[SHOPME-site-link](https://bejewelled-fenglisu-523224.netlify.app/)
 
 
 ## Technologies and libraries in use

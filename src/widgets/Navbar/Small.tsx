@@ -43,14 +43,14 @@ const SmallScreen = ({ totalQuantity }: SmallScreenProps) => {
 					<Link to='/cart'>
 						<IconButton style={style.smIconButton} size='large'>
 							<ShoppingCartOutlinedIcon fontSize='large' sx={style.smIcon} />
-						</IconButton>
+						</IconButton><span style={style.smSpan}>{totalQuantity}</span>
 					</Link>
 					<Link to='/login'>
 						{' '}
 						<IconButton style={style.smIconBtn2} size='large'>
 							<PermIdentityOutlinedIcon fontSize='large' sx={style.smIcon} />
 						</IconButton>
-						<span style={style.smSpan}>{totalQuantity}</span>
+						
 					</Link>
 					<OpenMenu />
 				</Box>
