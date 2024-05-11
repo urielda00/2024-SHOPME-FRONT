@@ -136,7 +136,7 @@ const LargeCart: React.FC = () => {
 								Checkout
 							</Mui.Button>
 						) : (
-							<GenerateLinks height='50px' icon={false} button={true} src={'register'} content={'Register'} width='96%' />
+							<GenerateLinks height='50px' icon={false} button={true} src={'checkout'} content={'Checkout'} width='96%' />
 						)}
 						{!user && <GenerateLinks height='50px' icon={false} button={true} src={'register'} content={'Register'} width='96%' />}
 					</Mui.Box>
