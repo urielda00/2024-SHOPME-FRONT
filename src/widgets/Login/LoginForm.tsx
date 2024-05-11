@@ -94,7 +94,8 @@ const LoginForm = () => {
 						fullWidth
 						variant='contained'
 						id='submitBtn'
-						disabled={!isDirty || !isValid || !captchaVerified}
+						//|| !captchaVerified
+						disabled={!isDirty || !isValid  }
 						sx={{
 							mt: 3,
 							bgcolor: 'success.main',

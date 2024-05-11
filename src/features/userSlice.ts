@@ -22,9 +22,9 @@ const userSlice = createSlice({
 		},
 
 		errorLogged: (state, action: PayloadAction<string>) => {
-			state.user = false;
+			//state.user = false;
 			state.userId = false;
-			state.isAdmin = false;
+			//state.isAdmin = false;
 			state.loginError = action.payload;
 		},
 

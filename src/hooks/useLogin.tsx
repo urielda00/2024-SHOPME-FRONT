@@ -51,10 +51,7 @@ const useLogin = () => {
 			);
 
 			navigate('/');
-
-			setTimeout(() => {
-				navigate(0);
-			}, 1000);
+			//navigate(0);
 		} else {
 			dispatch(UserActions.errorLogged(response.error));
 		}
@@ -64,7 +61,7 @@ const useLogin = () => {
 		if (isSubmitSuccessful) {
 			reset();
 		}
-	}, [isSubmitSuccessful, reset]);
+	}, [isSubmitSuccessful]);
 
 	return {
 		errors,
