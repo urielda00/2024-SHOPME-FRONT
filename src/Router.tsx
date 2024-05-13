@@ -14,6 +14,7 @@ import ResetPass from './pages/ResetPass';
 import ForgotPass from './pages/ForgotPass';
 import ProductsList from './pages/ProductsList';
 import UserDashboard from './pages/UserDashboard';
+import Construction from './components/Construction';
 
 // Admin Pages
 import Update from './pages/AdminPages/Update';
@@ -74,6 +75,7 @@ const Router = () => {
 					</AdminAuth>
 				}
 			/>
+			<Route path='underConstruction' element={<Construction />} />
 			<Route path='*' element={<NotFound />} />
 		</Routes>
 	);

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import RelateProducts from '../widgets/Product/RelateProducts';
 import { UseSingleItemData } from '../services/Product/getProduct';
 import SingleItemContainer from '../widgets/Product/SingleItemContainer';
+import Construction from '../components/Construction';
 
 const Product = () => {
 	const { productId } = useParams();
@@ -31,7 +32,7 @@ const Product = () => {
 			</Box>
 
 			{/* Medium & Small Screens: */}
-			<Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' }, height: '78vh', width: '100%' }}>The style for medium & small screens is not ready yet.</Box>
+			<Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' }}}><Construction/></Box>
 		</Box>
 	);
 };
