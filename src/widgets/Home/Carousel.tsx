@@ -22,10 +22,10 @@ export const items = [
 	},
 ];
 
-export const Carousel = ({ item, width }: CarouselItemProps) => {
+export const Carousel = ({ item, width, isSmall }: CarouselItemProps) => {
 	return (
 		<div style={{ width: width, ...style.container }}>
-			<h1 style={style.h1}>{item.h1}</h1>
+			<h1 style={{ ...style.h1, top: isSmall ? '50.5vw' : '7.5vw' }}>{item.h1}</h1>
 			<img alt='' src={item.src} style={style.img} />
 		</div>
 	);

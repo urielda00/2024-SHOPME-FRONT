@@ -15,5 +15,13 @@ export interface FadeProps {
 // Carousel
 export interface CarouselItemProps {
 	width: string;
+	isSmall ?: boolean;
 	item: { h1: string; src: string };
 }
+
+// CarouselView
+export interface CarouselViewProps {
+	isSmall?: boolean;
+}
+
+

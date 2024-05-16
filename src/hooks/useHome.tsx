@@ -5,9 +5,9 @@ import { ReactElement } from 'react';
 import Fade from '../widgets/Home/Fade';
 import Home1 from '../widgets/Home/Home1';
 import Home3 from '../widgets/Home/Home3';
-
 import CarouselView from '../widgets/Home/CarouselView';
 import ClickAbleItems from '../widgets/Home/ClickAbleItems';
+import MobileClickAble from '../widgets/Home/MobileClickAble';
 
 // Style:
 import * as first from '../style/Home/Home1';
@@ -31,6 +31,8 @@ const useHome = () => {
 						boxStyle={{ ...third.inlineContainer3, ...third.smInlineContainer3 }}
 					/>
 					<Fade height='30vh' degrees={180} />
+					<CarouselView isSmall={true} />
+					<MobileClickAble />
 				</>
 			);
 		} else if (medium) {

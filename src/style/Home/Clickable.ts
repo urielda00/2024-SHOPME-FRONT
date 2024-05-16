@@ -25,6 +25,7 @@ export const inlineContainerStyle: React.CSSProperties = {
 	justifyContent: 'center',
 };
 
+
 export const secondInlineContainerStyle: React.CSSProperties = {
 	width: '90%',
 	height: '75vh',
@@ -61,4 +62,23 @@ export const linkStyle: React.CSSProperties = {
 	textAlign: 'center',
 	textDecoration: 'none',
 	color: 'var(--black)',
+};
+
+// Mobile
+export const mobileLinkStyle: React.CSSProperties = {
+	width: '100%',
+	height: '100%',
+	objectFit: 'cover',
+	borderRadius: '30px',
+};
+
+export const mobileContainerStyle: React.CSSProperties = {
+	width: '100%',
+	height: '200%',
+	padding: '10px',
+	display: 'flex',
+	textAlign: 'center',
+	flexDirection: 'column',
+	backgroundColor: 'white',
+	justifyContent: 'center',
 };

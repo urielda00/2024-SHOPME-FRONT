@@ -8,12 +8,12 @@ export const container: React.CSSProperties = {
 	justifyContent: 'center',
 };
 
-export const h1: React.CSSProperties = { position: 'absolute', top: '7.5vw' };
+export const h1: React.CSSProperties = { position: 'absolute' };
 
 export const img: React.CSSProperties = {
 	width: '80%',
 	height: '75vh',
-	objectFit: 'cover',
+	objectFit: 'contain',
 	borderRadius: '30px',
 };
 
@@ -21,7 +21,6 @@ export const img: React.CSSProperties = {
 export const viewContainer: React.CSSProperties = {
 	width: 'var(--width)',
 	display: 'flex',
-	height: '100vh',
 	overflow: 'hidden',
 	alignItems: 'center',
 	position: 'relative',
@@ -43,7 +42,6 @@ export const infoContainer: React.CSSProperties = {
 
 export const secondContainerStyle: React.CSSProperties = {
 	top: '91vh',
-	left: '42vw',
 	height: '60px',
 	width: '200px',
 	display: 'flex',
