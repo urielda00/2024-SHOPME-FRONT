@@ -15,17 +15,17 @@ const categoriesList = [
 
 const shopList = [
 	{ name: 'Shop All', link: '/productsList' },
-	{ name: 'New In', link: '/newItems' },
-	{ name: 'Best Offers', link: '/bestOffers' },
-	{ name: '2023 Items', link: '/items/2023' },
-	{ name: '2022 Items', link: '/items/2022' },
+	{ name: 'New In', link: '/productsList' },
+	{ name: 'Best Offers', link: '/productsList' },
+	{ name: '2023 Items', link: '/productsList' },
+	{ name: '2022 Items', link: '/productsList' },
 ];
 
 const supportList = [
-	{ name: 'My account', link: '/user/account' },
-	{ name: 'FAQ', link: '/faq' },
-	{ name: 'Terms', link: '/terms' },
-	{ name: 'Privacy Policy', link: 'privacyPolicy' },
+	{ name: 'My account', link: 'underConstruction' },
+	{ name: 'FAQ', link: '/underConstruction' },
+	{ name: 'Terms', link: '/underConstruction' },
+	{ name: 'Privacy Policy', link: 'underConstruction' },
 ];
 
 const OpenCategories = ({ hover }: any) => {
