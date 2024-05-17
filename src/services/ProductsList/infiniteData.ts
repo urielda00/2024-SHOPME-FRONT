@@ -9,7 +9,7 @@ interface FetchItemsOptions {
 }
 
 const fetchItems = async ({ page, category, year = false, os = false, brand = false }: FetchItemsOptions) => {
-	const LimitItemsPerPage: number = 2;
+	const LimitItemsPerPage: number = 4;
 	const baseUrl = `${process.env.BASE_BACK_URL}/product/readProducts`;
 	let url = `${baseUrl}?per_page=${LimitItemsPerPage}&page=${page}`;
 

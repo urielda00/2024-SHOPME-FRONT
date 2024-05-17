@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import * as types from '../interfaces/admin.interface';
 import SubmitFunc from '../widgets/Admin/Create&Update/SubmitFunc';
 
 const useCreateUpdate = () => {
+	const navigate = useNavigate();
+
 	const [step, setStep] = useState(1);
 	const [image1, setImage1] = useState<any>(null);
 	const [image2, setImage2] = useState<any>(null);
@@ -48,6 +51,7 @@ const useCreateUpdate = () => {
 		if (isUpdate) {
 			console.log('the path not completed yet.');
 			SubmitFunc(image1, image2, image3, image4, data);
+			navigate('/');
 		} else {
 			SubmitFunc(image1, image2, image3, image4, data);
 		}
