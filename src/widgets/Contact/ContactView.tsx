@@ -7,7 +7,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 
 const ContactView = () => {
 	const FormSubmitMailLink = process.env.MAIL_LINK;
-	const thankYouLink = `${process.env.FRONT_URL}/thankYou`;
+	const thankYouLink = `${process.env.FRONT_URL}thankYou`;
 
 	return (
 		<Mui.Grid container component='main' sx={{ height: '88vh' }}>
