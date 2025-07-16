@@ -7,13 +7,13 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { responsiveUnits } from '../../utils/responsiveUnits';
 import { UseRelateItemsData } from '../../services/Product/getRelate';
 
-const RelateProducts = ({ handleState }: any) => {
+const RelateProducts = ({ handleState, category }: any) => {
 	const [searchParams] = useSearchParams();
-	const category = searchParams.get('category');
+	// const category = searchParams.get('category');
 	const { isLoading, data } = UseRelateItemsData(category);
 
 	if (isLoading) return <Loading />;
-
+  
 	return (
 		<Box sx={style.container}>
 			<h1 style={{ marginBottom: '30px' }}>Products related to this item:</h1>

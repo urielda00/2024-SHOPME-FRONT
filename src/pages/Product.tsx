@@ -28,7 +28,7 @@ const Product = () => {
 			{/* Large Screens: */}
 			<Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
 				<SingleItemContainer imgSrc={imgSrc} data={data} handleState={handleState} />
-				<RelateProducts handleState={handleState} />
+				<RelateProducts handleState={handleState} category={data?.category}/>
 			</Box>
 
 			{/* Medium & Small Screens: */}
