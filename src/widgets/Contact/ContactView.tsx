@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Mui from '@mui/material/';
 import renderForm from './DynamicFields';
+import backGround from '../../assets/contactBackground.jpg';
 
 // Icons
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -52,5 +53,5 @@ const imageContainerStyle: React.CSSProperties = {
 	backgroundSize: 'cover',
 	backgroundPosition: 'center',
 	backgroundRepeat: 'no-repeat',
-	backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+	backgroundImage: `url(${backGround})`,
 };
