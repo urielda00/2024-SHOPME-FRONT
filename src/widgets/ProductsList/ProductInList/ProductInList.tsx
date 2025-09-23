@@ -1,11 +1,11 @@
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
-import { Box, useMediaQuery } from '@mui/material';
+import { Box } from '@mui/material';
+import useResponsive from '../../../hooks/useResponsive';
 import * as style from '../../../style/ProductsList/ProductInList';
 
 const ProductInList = ({ item }: any) => {
-	const isXs = useMediaQuery('(max-width:600px)');
-	const isSm = useMediaQuery('(min-width:601px) and (max-width:960px)');
+	const { isXs, isSm } = useResponsive();
 
 	const getStyle = () => {
 		if (isXs) {

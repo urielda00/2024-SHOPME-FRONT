@@ -1,9 +1,9 @@
-import { Skeleton, Stack, useMediaQuery } from '@mui/material';
+import { Skeleton, Stack } from '@mui/material';
+import useResponsive from '../../hooks/useResponsive';
 
 const Skeletons = () => {
 	// Check the screen size:
-	const isXs = useMediaQuery('(max-width:600px)');
-
+	const { isXs } = useResponsive();
 	return (
 		<>
 			{isXs ? (

@@ -4,6 +4,7 @@ import React, { FC, useState } from 'react';
 import FilterBrands from './FilterBrands';
 import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
+import useResponsive from '../../../../hooks/useResponsive';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { categoryList, yearsList } from '../../../../utils/data/productsData';
 import { CategoriesProps as Props}  from '../../../../interfaces/productList.interface';
@@ -44,7 +45,8 @@ const Categories: FC<Props> = ({ category, brand, os, year, isPanel, text }) => 
 	const handleChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => setExpanded(isExpanded ? panel : false);
 
 	// Check the screen size:
-	const isSm = Mui.useMediaQuery('(min-width:601px) and (max-width:960px)');
+		const {isSm } = useResponsive();
+
 
 	return (
 		<>

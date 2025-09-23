@@ -1,9 +1,10 @@
 import * as Mui from '@mui/material';
 import Categories from './Categories';
+import useResponsive from '../../../../hooks/useResponsive';
 
 const Accordions = () => {
 	// Check the screen size:
-	const isSm = Mui.useMediaQuery('(min-width:601px) and (max-width:960px)');
+	const { isSm } = useResponsive();
 
 	return (
 		<>

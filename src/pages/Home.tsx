@@ -1,10 +1,10 @@
+import { Box } from '@mui/material';
 import useHome from '../hooks/useHome';
-import { Box, useMediaQuery } from '@mui/material';
+import useResponsive from '../hooks/useResponsive';
 
 const Home = () => {
 	// Check the screen size:
-	const isXs = useMediaQuery('(max-width:600px)');
-	const isSm = useMediaQuery('(min-width:601px) and (max-width:960px)');
+	const { isXs, isSm } = useResponsive();
 
 	const { getHome1stComponent } = useHome();
 

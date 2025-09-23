@@ -1,12 +1,12 @@
+import { Box } from '@mui/material';
 import Filter from './Filter/Filter';
-import { Box, useMediaQuery } from '@mui/material';
+import useResponsive from '../../hooks/useResponsive';
 import ProductInList from './ProductInList/ProductInList';
 import * as style from '../../style/ProductsList/ProductsList';
 
 const ProductsListDisplay = ({ items, data }: any) => {
 	// Check the screen size:
-	const isXs = useMediaQuery('(max-width:600px)');
-	const isSm = useMediaQuery('(min-width:601px) and (max-width:960px)');
+	const { isXs, isSm } = useResponsive();
 
 	const setContainerStyle = () => {
 		if (isXs) {

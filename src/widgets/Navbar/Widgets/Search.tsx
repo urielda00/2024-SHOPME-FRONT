@@ -4,14 +4,14 @@ import * as Mui from '@mui/material';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import * as style from '../../../style/NavBar/Search';
+import useResponsive from '../../../hooks/useResponsive';
 
 const Search = () => {
 	const [data, setData] = React.useState([]);
 	const [query, setQuery] = React.useState('');
 
 	// Check the screen size:
-	const isXs = Mui.useMediaQuery('(max-width:600px)');
-	const isSm = Mui.useMediaQuery('(min-width:601px) and (max-width:960px)');
+  const {isXs,isSm} = useResponsive();
 	const url = `${process.env.BASE_BACK_URL}/product/searchProduct?key=${query}`;
 	const setListStyle = isXs ? style.smList : isSm ? style.mdList : style.lgList;
 

@@ -1,9 +1,11 @@
+import { Button } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import { useAppDispatch } from '../../../app/hooks';
-import { Button, useMediaQuery } from '@mui/material';
 import { addToCart } from '../../../features/cartSlice';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import useResponsive from '../../../hooks/useResponsive';
 import * as style from '../../../style/ProductsList/ProductInList';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 import { FC } from 'react';
 
 interface Props {
@@ -14,8 +16,7 @@ interface Props {
 const GenerateBtn: FC<Props> = ({ isInfo, item }) => {
 	const dispatch = useAppDispatch();
 
-	const isXs = useMediaQuery('(max-width:600px)');
-	const isSm = useMediaQuery('(min-width:601px) and (max-width:960px)');
+	const { isXs, isSm } = useResponsive();
 
 	const handleButtonClick = () => {
 		// Only dispatch addToCart if isInfo is false
