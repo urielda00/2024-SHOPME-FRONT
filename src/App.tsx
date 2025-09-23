@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar'; 
+import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { useLocation } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
@@ -8,6 +8,7 @@ import AdminController from './components/AdminController';
 import Router from './Router';
 const App = () => {
 	const { pathname } = useLocation();
+	console.log(process.env.BASE_BACK_URL);
 
 	return (
 		<>

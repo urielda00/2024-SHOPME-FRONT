@@ -1,31 +1,48 @@
 import * as React from 'react';
 import { Toolbar } from '@mui/material';
 import { useAppSelector } from '../app/hooks';
-import MediumScreen from '../widgets/Navbar/Med';
-import LargeScreen from '../widgets/Navbar/Large';
-import SmallScreen from '../widgets/Navbar/Small';
 import * as style from '../style/NavBar/Component';
+import { lazy, Suspense, useState, useEffect } from 'react';
 
-// The component
+// Lazy load screens
+const LargeScreen = lazy(() => import('../widgets/Navbar/Large'));
+const MediumScreen = lazy(() => import('../widgets/Navbar/Med'));
+const SmallScreen = lazy(() => import('../widgets/Navbar/Small'));
+
 const NavBar: React.FunctionComponent = () => {
-	const { totalQuantity } = useAppSelector((state) => state.allCart);
+	const totalQuantity = useAppSelector((state) => state.allCart.totalQuantity);
+	const [screen, setScreen] = useState<'large' | 'medium' | 'small'>('large');
+
+	// Determine current screen size
+	useEffect(() => {
+		const updateScreen = () => {
+			const width = window.innerWidth;
+			if (width >= 960) setScreen('large');
+			else if (width >= 600) setScreen('medium');
+			else setScreen('small');
+		};
+
+		updateScreen();
+		window.addEventListener('resize', updateScreen);
+		return () => window.removeEventListener('resize', updateScreen);
+	}, []);
+
+	// Render the correct screen component
+	const renderScreen = () => {
+		switch (screen) {
+			case 'large':
+				return <LargeScreen />;
+			case 'medium':
+				return <MediumScreen totalQuantity={totalQuantity} />;
+			case 'small':
+				return <SmallScreen totalQuantity={totalQuantity} />;
+		}
+	};
+
 	return (
-		<>
-			{/* for large screens: */}
-			<Toolbar disableGutters style={style.Container} sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
-				<LargeScreen />
-			</Toolbar>
-
-			{/* for medium screens: */}
-			<Toolbar disableGutters style={style.Container} sx={{ display: { xs: 'none', sm: 'flex', md: 'none' } }}>
-				<MediumScreen totalQuantity={totalQuantity} />
-			</Toolbar>
-
-			{/* for small screens: */}
-			<Toolbar disableGutters style={style.Container} sx={{ display: { xs: 'flex', sm: 'none', md: 'none' } }}>
-				<SmallScreen totalQuantity={totalQuantity} />
-			</Toolbar>
-		</>
+		<Toolbar disableGutters style={style.Container}>
+			<Suspense fallback={<div />}>{renderScreen()}</Suspense>
+		</Toolbar>
 	);
 };
 

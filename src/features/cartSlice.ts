@@ -8,10 +8,6 @@ import { incrementCartAPI } from '../services/Cart/increment';
 import { addToCartAPI, updateInAddToCartAPI } from '../services/Cart/addToCart';
 import { decrementCartAPI1, decrementCartAPI2 } from '../services/Cart/decrement';
 
-// Check if the user logged:
-const isLogged: Types.IsLoggedAndUserName = window.sessionStorage.getItem('isLogged');
-const userName: Types.IsLoggedAndUserName = window.sessionStorage.getItem('userName') || '';
-
 const initialState: Types.InitialCartState = {
 	cart: [],
 	totalPrice: 0,
@@ -24,6 +20,10 @@ export const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addToCart: (state, action: any) => {
+			// Get session info inside the reducer
+			const isLogged = window.sessionStorage.getItem('isLogged');
+			const userName = window.sessionStorage.getItem('userName') || '';
+
 			//If the user connected, also update the DB:
 			const itemIndex = state.cart.findIndex((item: any) => item._id === action.payload._id);
 
@@ -47,6 +47,9 @@ export const cartSlice = createSlice({
 		},
 
 		incrementQuantity: (state, action) => {
+			const isLogged = window.sessionStorage.getItem('isLogged');
+			const userName = window.sessionStorage.getItem('userName') || '';
+
 			const itemIndex = state.cart.findIndex((item: any) => item._id === action.payload._id);
 			if (state.cart[itemIndex].quantity - state.cart[itemIndex].itemQuantity > 0) {
 				state.cart[itemIndex].itemQuantity += 1;
@@ -59,6 +62,9 @@ export const cartSlice = createSlice({
 		},
 
 		decrementQuantity: (state, action) => {
+			const isLogged = window.sessionStorage.getItem('isLogged');
+			const userName = window.sessionStorage.getItem('userName') || '';
+
 			const itemIndex = state.cart.findIndex((item: any) => item._id === action.payload._id);
 			const itemLocation = state.cart[itemIndex];
 			// if the item quantity in the cart is more then 1:
@@ -80,8 +86,11 @@ export const cartSlice = createSlice({
 		},
 
 		removeItem: (state, action) => {
+			const isLogged = window.sessionStorage.getItem('isLogged');
+			const userName = window.sessionStorage.getItem('userName') || '';
+
 			// Call to the api if the user is logged:
-			isLogged === 'true' && removeItemAPI(action.payload, userName);
+			isLogged === 'true' && userName && removeItemAPI(action.payload, userName);
 
 			const itemIndex = state.cart.findIndex((item: any) => item._id === action.payload._id);
 			const itemLocation = state.cart[itemIndex];
@@ -93,6 +102,9 @@ export const cartSlice = createSlice({
 		},
 
 		deleteAllCart: (state) => {
+			const isLogged = window.sessionStorage.getItem('isLogged');
+			const userName = window.sessionStorage.getItem('userName') || '';
+
 			state.cart = [];
 			state.totalPrice = 0;
 			state.totalQuantity = 0;
@@ -118,4 +130,12 @@ export const cartSlice = createSlice({
 });
 
 export default cartSlice.reducer;
-export const { addToCart, incrementQuantity, decrementQuantity, removeItem, deleteAllCart, setUserCart, resetOnLogOut } = cartSlice.actions;
+export const {
+	addToCart,
+	incrementQuantity,
+	decrementQuantity,
+	removeItem,
+	deleteAllCart,
+	setUserCart,
+	resetOnLogOut,
+} = cartSlice.actions;

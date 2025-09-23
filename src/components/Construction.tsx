@@ -28,7 +28,7 @@ const initialContainerStyle: React.CSSProperties = {
 	minWidth: '400px',
 	backgroundSize: 'contain',
 	backgroundRepeat: ' no-repeat',
-	backgroundImage: `url(${back1})`,
+	backgroundImage: `url(/assets/construction.jpg)`,
 };
 
 const h1Style: React.CSSProperties = {
