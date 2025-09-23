@@ -80,7 +80,7 @@ const SmallCart: React.FC = () => {
 			</Mui.Box>
 
 			<Mui.Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-				<input type='text' style={style.input} placeholder='Enter Your Coupon' />
+				<input id='couponCode' name='couponCode' type='text' style={style.input} placeholder='Enter Your Coupon' />
 
 				<Mui.Box sx={style.dialogContainer}>
 					<MuiDialog open={dialogOpen} />

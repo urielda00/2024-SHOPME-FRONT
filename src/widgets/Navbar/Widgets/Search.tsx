@@ -43,7 +43,7 @@ const Search = () => {
 				<Mui.TextField
 					value={query}
 					type='search'
-					autoComplete=''
+					autoComplete='search'
 					variant='standard'
 					placeholder='Search here...'
 					onChange={(e) => setQuery(e.target.value)}

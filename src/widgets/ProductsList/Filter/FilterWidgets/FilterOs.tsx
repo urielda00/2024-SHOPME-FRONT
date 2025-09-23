@@ -9,8 +9,14 @@ const FilterOs: FC<Props> = ({ brand }) => {
 
 	const renderCheckboxList = (options: string[]) => (
 		<Box display='grid'>
-			{options.map((option) => (
-				<FormControlLabel key={option} control={<Checkbox />} label={option} checked={currentOs === option} onClick={() => addFilter({ os: option })} />
+			{options.map((option, index) => (
+				<FormControlLabel
+					key={option}
+					control={<Checkbox id={`os-${index}`} />}
+					label={option}
+					checked={currentOs === option}
+					onClick={() => addFilter({ os: option })}
+				/>
 			))}
 		</Box>
 	);

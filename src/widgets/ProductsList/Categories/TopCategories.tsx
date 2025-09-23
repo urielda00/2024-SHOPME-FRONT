@@ -49,7 +49,7 @@ const TopCategories = () => {
 								return (
 									<Mui.FormControlLabel
 										key={index}
-										control={<Mui.Checkbox />}
+										control={<Mui.Checkbox id={`category-${category.category}`} name='toCategory' />}
 										label={category.name}
 										checked={searchParams.get('toCategory') === `${category.category}`}
 										onClick={() => {

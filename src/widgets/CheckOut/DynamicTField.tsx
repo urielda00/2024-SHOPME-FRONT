@@ -20,7 +20,7 @@ const DynamicTField: React.FC<FormProps> = ({ formData }) => {
 			))}
 
 			<Mui.Grid item xs={12}>
-				<Mui.FormControlLabel control={<Mui.Checkbox color='secondary' name='saveAddress' value='yes' />} label='Confirm The Address Here' />
+				<Mui.FormControlLabel control={<Mui.Checkbox id='checkbox1' color='secondary' name='saveAddress' value='yes' />} label='Confirm The Address Here' />
 			</Mui.Grid>
 		</Mui.Grid>
 	);

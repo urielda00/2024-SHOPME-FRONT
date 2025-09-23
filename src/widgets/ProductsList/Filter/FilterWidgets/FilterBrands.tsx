@@ -9,8 +9,19 @@ const FilterBrands: FC<Props> = ({ brand }) => {
 
 	const renderCheckboxList = (options: string[]) => (
 		<Box display='grid'>
-			{options.map((item) => (
-				<FormControlLabel key={item} control={<Checkbox />} label={item} checked={currentBrand === item} onClick={() => addFilter({ brand: item })} />
+			{options.map((item,index) => (
+				<FormControlLabel
+					key={item}
+					control={
+						<Checkbox
+							id={`brand-${item}-${index}`}
+							name='brand'
+						/>
+					}
+					label={item}
+					checked={currentBrand === item}
+					onClick={() => addFilter({ brand: item })}
+				/>
 			))}
 		</Box>
 	);
